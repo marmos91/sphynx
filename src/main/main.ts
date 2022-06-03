@@ -34,9 +34,6 @@ async function createWindow()
 
 async function registerListeners()
 {
-    /**
-     * This comes from bridge integration, check bridge.ts
-     */
     ipcMain.on('message', (_, message) =>
     {
         console.log(message);
@@ -51,9 +48,7 @@ app.on('ready', createWindow)
 app.on('window-all-closed', () =>
 {
     if(process.platform !== 'darwin')
-    {
         app.quit();
-    }
 });
 
 app.on('activate', async () =>
